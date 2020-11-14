@@ -1,0 +1,99 @@
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_pseudo_ta_session:292: Lookup pseudo TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_user_ta_session:637: Lookup user TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73 (REE)
+DEBUG:   [0x0] TEE-CORE:ta_load:317: ELF load address 0x101000
+MESSAGE: USER-TA: Sec storage task test TA_CreateEntryPoint 
+FLOW:    USER-TA: tee_user_mem_alloc:343: Allocate: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_OpenSessionEntryPoint
+MESSAGE: USER-TA: CMD_ID = 41
+MESSAGE: USER-TA: [CREATE] start to create file: COMMLOGIC_4_20200611_old.txt
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_pseudo_ta_session:292: Lookup pseudo TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_user_ta_session:637: Lookup user TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73 (REE)
+DEBUG:   [0x0] TEE-CORE:ta_load:317: ELF load address 0x101000
+MESSAGE: USER-TA: Sec storage task test TA_CreateEntryPoint 
+FLOW:    USER-TA: tee_user_mem_alloc:343: Allocate: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_OpenSessionEntryPoint
+MESSAGE: USER-TA: CMD_ID = 43
+MESSAGE: USER-TA: [WRITE] start to write file: COMMLOGIC_4_20200611_old.txt
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_pseudo_ta_session:292: Lookup pseudo TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_user_ta_session:637: Lookup user TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73 (REE)
+DEBUG:   [0x0] TEE-CORE:ta_load:317: ELF load address 0x101000
+MESSAGE: USER-TA: Sec storage task test TA_CreateEntryPoint 
+FLOW:    USER-TA: tee_user_mem_alloc:343: Allocate: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_OpenSessionEntryPoint
+MESSAGE: USER-TA: CMD_ID = 42
+MESSAGE: USER-TA: [READ] start to read file: COMMLOGIC_4_20200611_old.txt
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_pseudo_ta_session:292: Lookup pseudo TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_user_ta_session:637: Lookup user TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73 (REE)
+DEBUG:   [0x0] TEE-CORE:ta_load:317: ELF load address 0x101000
+MESSAGE: USER-TA: Sec storage task test TA_CreateEntryPoint 
+FLOW:    USER-TA: tee_user_mem_alloc:343: Allocate: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_OpenSessionEntryPoint
+MESSAGE: USER-TA: CMD_ID = 45
+MESSAGE: USER-TA: [RENAME] start to rename file: COMMLOGIC_4_20200611_old.txt
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_pseudo_ta_session:292: Lookup pseudo TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_user_ta_session:637: Lookup user TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73 (REE)
+DEBUG:   [0x0] TEE-CORE:ta_load:317: ELF load address 0x101000
+MESSAGE: USER-TA: Sec storage task test TA_CreateEntryPoint 
+FLOW:    USER-TA: tee_user_mem_alloc:343: Allocate: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_OpenSessionEntryPoint
+MESSAGE: USER-TA: CMD_ID = 42
+MESSAGE: USER-TA: [READ] start to read file: COMMLOGIC_4_20200611_new.txt
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_pseudo_ta_session:292: Lookup pseudo TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_user_ta_session:637: Lookup user TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73 (REE)
+DEBUG:   [0x0] TEE-CORE:ta_load:317: ELF load address 0x101000
+MESSAGE: USER-TA: Sec storage task test TA_CreateEntryPoint 
+FLOW:    USER-TA: tee_user_mem_alloc:343: Allocate: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_OpenSessionEntryPoint
+MESSAGE: USER-TA: CMD_ID = 44
+MESSAGE: USER-TA: [TRUN] start to truncate file: COMMLOGIC_4_20200611_new.txt
+MESSAGE: USER-TA: [TRUN] Start to truncate file:COMMLOGIC_4_20200611_new.txt,1000
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_pseudo_ta_session:292: Lookup pseudo TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73
+DEBUG:   [0x0] TEE-CORE:tee_ta_init_user_ta_session:637: Lookup user TA 53e4d3d3-0199-4f74-b94d-53d3daa57d73 (REE)
+DEBUG:   [0x0] TEE-CORE:ta_load:317: ELF load address 0x101000
+MESSAGE: USER-TA: Sec storage task test TA_CreateEntryPoint 
+FLOW:    USER-TA: tee_user_mem_alloc:343: Allocate: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_OpenSessionEntryPoint
+MESSAGE: USER-TA: CMD_ID = 42
+MESSAGE: USER-TA: [READ] start to read file: COMMLOGIC_4_20200611_new.txt
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:378: tee_ta_close_session(0xe0754d0)
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:397: Destroy session
+MESSAGE: USER-TA: Sec storage task test TA_CloseSessionEntryPoint
+FLOW:    USER-TA: tee_user_mem_free:442: Free: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_DestroyEntryPoint
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:423: Destroy TA ctx
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:378: tee_ta_close_session(0xe075bb0)
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:397: Destroy session
+MESSAGE: USER-TA: Sec storage task test TA_CloseSessionEntryPoint
+FLOW:    USER-TA: tee_user_mem_free:442: Free: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_DestroyEntryPoint
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:423: Destroy TA ctx
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:378: tee_ta_close_session(0xe076290)
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:397: Destroy session
+MESSAGE: USER-TA: Sec storage task test TA_CloseSessionEntryPoint
+FLOW:    USER-TA: tee_user_mem_free:442: Free: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_DestroyEntryPoint
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:423: Destroy TA ctx
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:378: tee_ta_close_session(0xe076970)
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:397: Destroy session
+MESSAGE: USER-TA: Sec storage task test TA_CloseSessionEntryPoint
+FLOW:    USER-TA: tee_user_mem_free:442: Free: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_DestroyEntryPoint
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:423: Destroy TA ctx
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:378: tee_ta_close_session(0xe077050)
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:397: Destroy session
+MESSAGE: USER-TA: Sec storage task test TA_CloseSessionEntryPoint
+FLOW:    USER-TA: tee_user_mem_free:442: Free: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_DestroyEntryPoint
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:423: Destroy TA ctx
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:378: tee_ta_close_session(0xe077730)
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:397: Destroy session
+MESSAGE: USER-TA: Sec storage task test TA_CloseSessionEntryPoint
+FLOW:    USER-TA: tee_user_mem_free:442: Free: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_DestroyEntryPoint
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:423: Destroy TA ctx
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:378: tee_ta_close_session(0xe077e10)
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:397: Destroy session
+MESSAGE: USER-TA: Sec storage task test TA_CloseSessionEntryPoint
+FLOW:    USER-TA: tee_user_mem_free:442: Free: link:[0x11f5e0], buf:[0x11f5f0:16]
+MESSAGE: USER-TA: Sec storage task test TA_DestroyEntryPoint
+DEBUG:   [0x0] TEE-CORE:tee_ta_close_session:423: Destroy TA ctx

@@ -1,0 +1,280 @@
+
+/****************************************************************************************/
+/*                          COPYRIGHT INFORMATION                                       */
+/*    All rights reserved:shuaifengyun@126.com.                                         */
+/****************************************************************************************/
+/*
+ ****************************************************************************************
+ *
+ *               secStorCaTest.c
+ *
+ * Filename      : secStorCaTest.c
+ * Author        : Shuai Fengyun
+ * Mail          : shuaifengyun@126.cn
+ * Create Time   : Mon 19 Jun 2017 10:33:32 AM CST
+ ****************************************************************************************
+ */
+
+#define MOUDLE_SST_TEST_CA_C_
+
+/** @defgroup MODULE_NAME_INFOR
+* @{
+*/
+
+/*
+ *******************************************************************************
+ *                                INCLUDE FILES
+ *******************************************************************************
+*/
+//#include "tee_api_defines_extensions.h"
+#include "AutoCaType.h"
+#include "AutoCaDebug.h"
+#include "AutoCaTest.h"
+#include "AutoCaFsHandle.h"
+#include "stdio.h"
+
+
+
+
+/*
+ *******************************************************************************
+ *                         FUNCTIONS SUPPLIED BY THIS MODULE
+ *******************************************************************************
+*/
+
+
+
+
+
+/*
+ *******************************************************************************
+ *                          VARIABLES SUPPLIED BY THIS MODULE
+ *******************************************************************************
+*/
+
+
+#ifdef CFG_REE_FS
+	TEE_STORAGE_PRIVATE_REE,
+#endif
+#ifdef CFG_RPMB_FS
+	TEE_STORAGE_PRIVATE_RPMB,
+#endif
+
+#if 0
+
+static uint32_t storage_ids[] = {
+	TEE_STORAGE_PRIVATE,
+#ifdef CFG_REE_FS
+	TEE_STORAGE_PRIVATE_REE,
+#endif
+#ifdef CFG_RPMB_FS
+	TEE_STORAGE_PRIVATE_RPMB,
+#endif
+};
+
+static uint32_t fs_id_for_tee_storage_private(void)
+{
+#if defined(CFG_REE_FS)
+	return TEE_STORAGE_PRIVATE_REE;
+#elif defined(CFG_RPMB_FS)
+	return TEE_STORAGE_PRIVATE_RPMB;
+#endif
+}
+
+#endif
+
+//uint8_t key_mac[32];
+
+
+
+/*
+ *******************************************************************************
+ *                          FUNCTIONS USED ONLY BY THIS MODULE
+ *******************************************************************************
+*/
+
+static int auto_ca_fs_demo();
+
+
+
+
+/*
+ *******************************************************************************
+ *                          VARIABLES USED ONLY BY THIS MODULE
+ *******************************************************************************
+*/
+/****demo ==5  ***/
+CHAR oldFileName[] = "secureFile.txt";
+CHAR newFileName[] = "changeSecureFile.txt";
+
+CHAR readBuf[256] = {0};
+CHAR writeBuf[] = "rpmb\n rpmb\n rpmb\n rpmb\n rpmb\n This is the test data which need be wrote into secure file";
+
+
+
+/*
+ *******************************************************************************
+ *                               FUNCTIONS IMPLEMENT
+ *******************************************************************************
+*/
+
+
+
+/** @ingroup MOUDLE_NAME_C_
+ *- #Description  This function for handle command.
+ * @param   pMsg           [IN] The received request message
+ *                               - Type: MBX_Msg *
+ *                               - Range: N/A.
+ *
+ * @return     void
+ * @retval     void
+ *
+ *
+ */
+int main(int argc, char *argv[])
+{
+	int l_Ret = FAIL;
+
+
+	TF("now,this demo is created for rpmb\n");
+
+
+ 
+	l_Ret = auto_ca_fs_demo();
+
+	if(FAIL == l_Ret)
+	{
+		TF("Read secure file fail\n");
+		return 0;
+	}
+
+
+}
+
+static int auto_ca_fs_demo()
+{
+	UINT32 fd = 0xFFFF;
+    int l_Ret = FAIL;
+    UINT32 l_FileLen = 0U;
+
+	TF("create operation!\n");
+	/** 2) Read data from secure file */
+	l_Ret = g_SecStorCa_CreateFile(sizeof(oldFileName), oldFileName);
+	if(FAIL == l_Ret)
+	{
+		TF("Read secure file fail\n");
+		return 0;
+	}
+#if 1
+
+	TF("write operation!\n");
+	/** 3) Write data into secure file */
+	l_Ret = g_SecStorCa_WiteFile(sizeof(oldFileName), oldFileName, sizeof(writeBuf), writeBuf);
+	if(FAIL == l_Ret)
+	{
+		TF("Write secure file fail\n");
+		return 0;
+	}
+
+	TF("read operation!\n");
+	/** 2) Read data from secure file */
+	l_Ret = g_SecStorCa_ReadFile(sizeof(oldFileName), oldFileName, 60U, readBuf);
+	if(FAIL == l_Ret)
+	{
+		TF("Read secure file fail\n");
+		return 0;
+	}
+	else
+	{
+		g_CA_PrintfBuffer(readBuf, 60U);
+		TF("The read data is:\n");
+		TF("%s\n", readBuf);
+	}
+
+
+	TF("rename operation!\n");
+	l_Ret = g_SecStorCa_RenameFile(sizeof(oldFileName), oldFileName, sizeof(newFileName), newFileName);
+	if(FAIL == l_Ret)
+	{
+		TF("Read secure file fail\n");
+		return 0;
+	}
+
+
+	TF("read operation!\n");
+	memset(readBuf, 0, 256);
+	/** 2) Read data from secure file */
+	l_Ret = g_SecStorCa_ReadFile(sizeof(newFileName), newFileName, 60U, readBuf);
+	if(FAIL == l_Ret)
+	{
+		TF("Read secure file fail\n");
+		return 0;
+	}
+	else
+	{
+		g_CA_PrintfBuffer(readBuf, 60U);
+		TF("The read data is:\n");
+		TF("%s\n", readBuf);
+	}
+
+
+
+	TF("truncate operation!\n");
+	/** 6) Truncate the secure file */
+	l_Ret = g_SecStorCa_TrunCatFile(sizeof(newFileName), newFileName, 20);
+	if(FAIL == l_Ret)
+	{
+		TF("Write secure file fail\n");
+		return 0;
+	}
+
+
+	TF("read3 operation!\n");
+	memset(readBuf, 0, 256);
+	l_Ret = g_SecStorCa_ReadFile(sizeof(newFileName), newFileName, 60U, readBuf);
+	if(FAIL == l_Ret)
+	{
+		TF("Read secure file fail\n");
+		return 0;
+	}
+	else
+	{
+		g_CA_PrintfBuffer(readBuf, 60U);
+		TF("The read data is:\n");
+		TF("%s\n", readBuf);
+	}
+
+
+	TF("Delete operation  do nothing  hann!\n");	
+	/** 10) Delete secure file */
+
+	l_Ret = g_SecStorCa_DeleteFile(sizeof(newFileName), newFileName);
+	if(FAIL == l_Ret)
+	{
+		TF("Write secure file fail\n");
+		return 0;
+	} 
+#endif
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @}
+ */
